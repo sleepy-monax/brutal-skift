@@ -1,0 +1,16 @@
+{
+    "id": "embed-brutal",
+    "type": "lib",
+    "description": "Karm platform embedding layer for the UNIX utopia.",
+    "requires": {
+        "sys": [
+            "brutal"
+        ]
+    },
+    "inject": [
+        "embed"
+    ],
+    "deps": [
+        "karm-base"
+    ]
+}

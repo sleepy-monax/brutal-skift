@@ -1,0 +1,6 @@
+[submodule "skift"]
+	path = skift
+	url = https://github.com/skiftOS/skift
+[submodule "brutal"]
+	path = brutal
+	url = https://github.com/brutal-org/brutal

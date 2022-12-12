@@ -1,0 +1,102 @@
+{
+    "id": "hjert-x86_64",
+    "type": "target",
+    "props": {
+        "toolchain": "clang",
+        "arch": "x86_64",
+        "sys": "brutal",
+        "abi": "sysv",
+        "encoding": "utf8",
+        "freestanding": false,
+        "host": false,
+        "karm-sys-encoding": "utf8",
+        "karm-sys-line-ending": "lf",
+        "karm-sys-path-separator": "slash",
+        "karm-cli-backend": "ansi"
+    },
+    "tools": {
+        "cc": {
+            "cmd": [
+                "@latest",
+                "clang"
+            ],
+            "args": [
+                "-target",
+                "x86_64-none-elf",
+                "-ffreestanding ",
+                "-D__brutal__=1 ",
+                "-nostdlib",
+                "-Ibrutal/sources/libs/ ",
+                "-Ibrutal/sources/libs/hw ",
+                "-Ibrutal/sources/apps ",
+                "-Ibrutal/sources/srvs ",
+                "-Ibrutal/sources/utils ",
+                "-Ibrutal/sources/ ",
+                "-Ibrutal/bin/generated ",
+                "-Ibrutal/bin/generated/headers ",
+                "-Ibrutal/sources/libs/stdc-ansi ",
+                "-Ibrutal/sources/libs/stdc-math ",
+                "-Ibrutal/sources/libs/stdc-ext ",
+                "-Ibrutal/sources/libs/stdc-posix "
+            ]
+        },
+        "cxx": {
+            "cmd": [
+                "@latest",
+                "clang++"
+            ],
+            "args": [
+                "-target",
+                "x86_64-none-elf",
+                "-ffreestanding ",
+                "-D__brutal__=1 ",
+                "-nostdlib",
+                "-Ibrutal/sources/libs/ ",
+                "-Ibrutal/sources/libs/hw ",
+                "-Ibrutal/sources/apps ",
+                "-Ibrutal/sources/srvs ",
+                "-Ibrutal/sources/utils ",
+                "-Ibrutal/sources/ ",
+                "-Ibrutal/bin/generated ",
+                "-Ibrutal/bin/generated/headers ",
+                "-Ibrutal/sources/libs/stdc-ansi ",
+                "-Ibrutal/sources/libs/stdc-math ",
+                "-Ibrutal/sources/libs/stdc-ext ",
+                "-Ibrutal/sources/libs/stdc-posix "
+            ]
+        },
+        "ld": {
+            "cmd": [
+                "@latest",
+                "ld.lld"
+            ],
+            "args": [
+                "-m",
+                "elf_x86_64",
+                "brutal/bin/devel/x86_64-brutal-llvm/libbrutal.a",
+                "-Tbrutal/sources/build/target/x86_64-link.ld",
+                "-z max-page-size=0x1000"
+            ],
+            "files": [
+                "brutal/bin/devel/x86_64-brutal-llvm/libbrutal.a",
+                "brutal/sources/build/target/x86_64-link.ld"
+            ]
+        },
+        "ar": {
+            "cmd": [
+                "@latest",
+                "llvm-ar"
+            ],
+            "args": [
+                "rcs"
+            ]
+        },
+        "as": {
+            "cmd": "nasm",
+            "args": [
+                "-f",
+                "elf64"
+            ]
+        }
+    }
+}

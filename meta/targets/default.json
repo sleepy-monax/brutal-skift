@@ -1,0 +1,4 @@
+[
+    "@include",
+    "meta/targets/brutal-x86_64.json"
+]
