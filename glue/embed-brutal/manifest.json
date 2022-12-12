@@ -11,6 +11,10 @@
         "embed"
     ],
     "deps": [
-        "karm-base"
+        "karm-base",
+        "brutal"
+    ],
+    "provide": [
+        "embed-ui"
     ]
 }

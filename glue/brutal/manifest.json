@@ -1,0 +1,7 @@
+{
+    "id": "brutal",
+    "type": "lib",
+    "provide": [
+        "stdc-math"
+    ]
+}

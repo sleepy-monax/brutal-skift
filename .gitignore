@@ -1,0 +1,6 @@
+.osdk/
+__pycache__/
+.vscode/
+.ninja_log
+.ninja_deps
+.DS_Store
